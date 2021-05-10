@@ -1,0 +1,383 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/product.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <style>
+        * {box-sizing: border-box;}
+        body {font-family: Verdana, sans-serif;}
+        .mySlides {display: none;}
+        img {vertical-align: middle;}
+
+        .mySlides2 {display: none}
+        * {box-sizing: border-box;}
+        body {font-family: Verdana, sans-serif;}
+        .mySlides {display: none;}
+        img {vertical-align: middle;}
+
+        /* Slideshow container */
+        .slideshow-container {
+          width: 100%;
+          position: relative;
+          margin: auto;
+        }
+
+        .slideshow-container2 {
+          width: 100%;
+          position: relative;
+          margin: auto;
+        }
+        
+        /* The dots/bullets/indicators */
+        .dot {
+          height: 15px;
+          width: 15px;
+          margin: 0 2px;
+          background-color: #bbb;
+          border-radius: 50%;
+          display: inline-block;
+          transition: background-color 0.6s ease;
+        }
+        
+        .active {
+          background-color: #717171;
+        }
+        
+        /* Fading animation */
+        .fade {
+          -webkit-animation-name: fade;
+          -webkit-animation-duration: 2s;
+          animation-name: fade;
+          animation-duration: 2s;
+        }
+
+        .composition:hover {
+          transform: scale(1.0) translateY(0.2rem);
+        }
+
+        .title {
+          font-size: 2.5rem;
+          font-weight: 700;
+          text-align: center;
+          background-image: linear-gradient(to right, pink, tomato);
+          -webkit-background-clip: text;
+          color: transparent;
+          letter-spacing: .2rem;
+          transition: all .2s;
+        }
+
+        .price {
+          display: block;
+          font-size: 1.5em;
+          font-weight: bold;
+        }
+
+        .title:hover {
+          transform: skewY(6deg) skewX(8deg) scale(1.1);
+          text-shadow: .3rem 1rem 2rem rgba(black, .2);
+        }
+        
+        .footerForm {
+          background-color: whitesmoke;
+          padding: 6rem 0 6rem 0;
+        }
+
+        .footer {
+            text-decoration: none;
+        }
+        .footer:link, 
+        .footer:visited {
+            color: black;
+        }
+        .footer:hover {
+            color: black;
+        }
+
+        .footerTitle {
+          font-size: 1.3rem;
+          font-weight: 700;
+        }
+
+        .icon {
+          font-size: 1.5rem;
+          padding: 0 1.2rem 0 1.2rem;
+        }
+
+        .icon:hover {
+          transform: scale(1.0) translateY(0.2rem);
+        }
+
+        .prev, .next {
+          cursor: pointer;
+          position: absolute;
+          top: 50%;
+          width: auto;
+          padding: 16px;
+          margin-top: -22px;
+          color: white;
+          font-weight: bold;
+          font-size: 18px;
+          transition: 0.6s ease;
+          border-radius: 0 3px 3px 0;
+          user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+          right: 0;
+          border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+          background-color: rgba(0,0,0,0.8);
+        }
+
+        @-webkit-keyframes fade {
+          from {opacity: .4} 
+          to {opacity: 1}
+        }
+        
+        @keyframes fade {
+          from {opacity: .4} 
+          to {opacity: 1}
+        }
+        
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+          .text {font-size: 11px}
+        }
+    </style>
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <img src="/images/slideshow1_adobespark.jpeg" style="width:100%">
+        </div>      
+        <div class="mySlides fade">
+          <img src="/images/slideshow2_adobespark.jpeg" style="width:100%">
+        </div>       
+        <div class="mySlides fade">
+          <img src="/images/slideshow3_adobespark.jpeg" style="width:100%">
+        </div>      
+    </div>
+        <br>
+        <div style="text-align:center">
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+        </div>
+        
+    <!-- <script>
+    var slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+    </script> -->
+
+  <br><br>
+
+    <div class="container" style="font-size: 70px; padding-left: 250px;">
+      <div class="row">
+        <div class="col-sm composition" style="color: Dodgerblue;">
+          <i class="fas fa-shipping-fast"></i>
+        </div>
+        <div class="col-sm composition" style="color: #5FC340;">
+          <i class="fas fa-hand-holding-usd"></i>
+        </div>
+        <div class="col-sm composition" style="color: tomato;">
+          <i class="fas fa-undo-alt"></i>
+        </div>
+      </div>
+    </div>
+    <div class="container" style="padding-left: 250px;">
+      <div class="row">
+        <div class="col-sm">
+          Fast Delivery
+        </div>
+        <div class="col-sm">
+          Low Price Guarantee
+        </div>
+        <div class="col-sm">
+          Return Policy
+        </div>
+      </div>
+    </div>
+  <br><br>
+
+    <p class="title">Bestsellers</p>
+
+  <main>
+    <% if (prods.length > 0) { 
+        let count=0;
+        let track=0;
+
+        while(track<prods.length) {   
+    %>
+
+    <div class="slideshow-container2">
+      <div class="mySlides2">
+        <div class="grid">
+          <% for (let i=track; (i<(track+4) && i<prods.length ); i++) { 
+              count++;
+          %>
+              <article class="card product-item">
+                  <header class="card__header">
+                    <h1 class="product__title font-weight-bold"><%= prods[i].title %></h1>
+                  </header>
+                  <div class="card__image">
+                      <img src="/<%= prods[i].imageUrl %>"
+                          alt="<%= prods[i].title %>">
+                  </div>
+                  <div class="card__content">
+                      <h2 class="product__price price">$<%= prods[i].price %></h2>
+                      <!-- <p class="product__description"><%= prods[i].description %></p> -->
+                  </div>
+                  <div class="card__actions">
+                      <a href="/products/<%= prods[i]._id %>" class="button">Details</a>
+                      <% if (isAuthenticated) { %>
+                          <%- include('../includes/add-to-cart.ejs', {product: prods[i]}) %>
+                      <% } %>
+                  </div>
+              </article>
+          <% } %>
+        </div>
+          <a class="prev" onclick="plusSlides2(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides2(1)">&#10095;</a>
+      </div>
+
+      <% track=track+4; } %>
+          
+    </div>
+      <% } else { %>
+          <h1>No Products Found!</h1>
+      <% } %>
+  </main>
+
+  <br>
+
+  <div class="footerForm">
+      <div class="container">
+        <div class="row">
+          <div class="footerTitle col-sm">
+            Customer Service
+          </div>
+          <div class="footerTitle col-sm">
+            About us
+          </div>
+          <div class="footerTitle col-sm">
+            Be the first to know
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <a class="footer" href="">Contact Us</a>
+            <br>
+            <a class="footer" href="">Help Centre</a>
+            <br>
+            <a class="footer" href="">Returns & Exchanges</a>
+          </div>
+          <div class="col-sm">
+            <a class="footer" href="">Careers</a>    
+            <br>
+            <a class="footer" href="">Corporate Information</a>
+            <br>
+            <a class="footer" href="">Sell on Anh's Marketplace</a>
+          </div>
+          <div class="col-sm">
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Email Address" aria-label="Email Address" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button">Sign Up</button>
+              </div>
+            </div>
+            <i class="fab fa-twitter icon"></i>
+            <i class="fab fa-facebook icon"></i>
+            <i class="fab fa-instagram icon"></i>
+            <i class="fab fa-linkedin icon"></i>
+          </div>
+        </div>
+      </div>
+  </div>
+<%- include('../includes/end.ejs') %>
+
+<script>
+  var slideIndex = 0;
+  showSlides();
+  
+  function showSlides() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
+  }
+
+
+  var slideIndex2 = 1;
+  
+
+  document.addEventListener('DOMContentLoaded', (event) => {
+    showSlides2(slideIndex2);
+    })
+
+  function plusSlides2(n) {
+    showSlides2(slideIndex2 += n);
+  }
+
+  function currentSlide2(n) {
+    showSlides2(slideIndex2 = n);
+  }
+
+  function showSlides2(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides2");
+    console.log(slides)
+    if (n > slides.length) {slideIndex2 = 1}    
+    if (n < 1) {slideIndex2 = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+
+    slides[slideIndex2-1].style.display = "block";  
+
+  }
+</script>
